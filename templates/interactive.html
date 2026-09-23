@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Interactive Binary Search</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+	<header class="header">
+		<h1>Binary Search Interactive</h1>
+	</header>
+	
+	<main class="container">
+
+		<section class="question-info">
+			<p>{{ question.question }}</p>
+		</section>
+	
+		{% if feedback %}	
+			<section class="feedback">
+				<h3>上一輪結果</h3>
+		
+				<p>{{ feedback }}</p>
+		
+				{% if feedback == "✗ 判斷錯誤" %}
+					<p>正確方向:{{ correct_direction }}</p>
+				{% endif%}
+			</section>
+		{% endif%}	
+		
+		<section class="question-card">
+			<p>
+				目前範圍：
+				{{ arr[left:right + 1]}}
+			</p>
+	
+			<h3>目前搜尋範圍</h3>
+			<p>target = {{ target }}</p>
+			<p>left = {{ left }} </p>
+			<p>right = {{ right }} </p>
+			<p>mid = {{ mid }} </p>
+			<p>mid 元素 = {{ arr[mid] }} </p>
+	
+			{% if found %}
+				<h2>✓ 找到了</h2>
+				<p>索引 = {{ mid }} </p>
+				<p>搜尋次數 = {{ count }} </p>
+		
+			{% else %}	
+				{% if target == arr[mid] %}
+				<p> target 等於 mid 元素</p>
+		
+				<form method= "POST">
+		
+					<input type="hidden" name ="left"	value="{{ left }}">
+					<input type="hidden" name ="right" value="{{ right }}">
+					<input type="hidden" name ="count" value="{{ count }}">
+			
+					<button
+						type="submit"
+						name="choice"
+						value="found"
+					>			
+						找到target
+					</button>		
+		
+				</form>
+			
+				{% else %}	
+		
+					<form method= "POST">
+		
+						<input type="hidden" name ="left"	value="{{ left }}">
+						<input type="hidden" name ="right" value="{{ right }}">
+						<input type="hidden" name ="count" value="{{ count }}">
+			
+						<button
+							type="submit"
+							name="choice"
+							value="left"
+						>			
+							← 往左
+						</button>	
+				
+						<button
+							type="submit"
+							name="choice"
+							value="right"
+						>		
+							往右 →
+						</button>
+				
+					</form>	
+		
+				{% endif %}
+			{% endif %}
+		</section>
+	
+		<nav class="navigation">		
+			<!-- 返回 intetactive 題目頁 -->
+			<a href="/question/{{ index }}"><button type="button">返回題目</button></a>	
+			<!-- 下一題 -->
+			<a href="/question/{{ index + 1 }}"><button type = "button">繼續</button></a>
+		</nav>
+	
+	</main>		
+</body>
