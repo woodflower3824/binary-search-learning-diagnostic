@@ -1,0 +1,55 @@
+* {
+	box-sizing: border-box;
+}
+
+body{
+	margin:0;
+	font-family: "Microsoft JhengHei", "微軟正黑體", "PingFang TC", "Noto Sans TC",sans-serif;
+}
+
+button{
+	font-family: inherit;
+}
+
+textarea{
+	font-family: inherit;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+pre{
+	font-family: monosapce;
+	max-width: 100%;
+	white-space: pre-wrap;
+	overflow-wrp: break-word;
+}
+
+.header{
+	text-align: center;
+}
+
+.container{
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 24px;
+}
+
+.question-info{
+	display:flex;
+	justify-content: space-between;
+}
+
+.question-card {
+	margin-top: 20px;
+}
+
+.feedback {
+	margin-top: 20px;
+}
+
+.navgation {
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-between;
+}
