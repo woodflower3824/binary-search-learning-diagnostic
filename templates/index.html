@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>資料結構學習診斷所</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+	<header class="header">
+	
+	<h1>資料結構學習診斷所</h1>
+	<h2>Binary Search</h2>
+	
+	</header>
+	
+	<main class="container">
+	
+		<section class="question-info">				
+			<p>第 {{ index + 1 }} / {{ total }} 題</p>
+			<p>題型：{{ question.type }} </p>
+		</section>
+	
+		<section class="question-card">
+		{% if trace_question %}
+			<h3>題目</h3>
+			<p> {{ trace_question.question }}</p>
+	
+			<h3>第 {{ question.step }} 步</h3>
+			<p>{{ question.question}}</p>
+		
+		{% elif question.type == "Code" %}
+			<pre>{{ question.question }}</pre>	
+	
+		{% else %}
+			<p>{{ question.question}}</p>
+		
+		{% endif %}
+	
+		<!-- 尚未提交答案時，依題型分流 -->
+		{% if not submitted %}
+	
+			<!-- Trace 連續小題：沒有step	，只顯示題目 -->
+			{% if question.type == "Trace" and question.step is not defined %}
+				<p>此題為連續小題，請依題目進行追蹤分析</p>
+		
+			
+			<!-- Interactive -->
+			{% elif question.subtopic == "Interactive" %}
+				<p>請依題目進行互動操作。 </p>
+			
+				<a href="/interactive/{{ index }}">
+					<button type="button">開始互動</button>
+				</a>
+
+			<!-- Ｃode -->
+			{% elif question.type == "Code" %}
+		
+				<form method="POST" action="/">
+		
+					<input 
+						type="hidden"
+						name="index"
+						value="{{ index }}"
+					>		
+		
+					<textarea
+						name="answer"
+						rows="20"
+						placeholder="請輸入程式碼..."
+					></textarea>
+		
+					<br><br>
+		
+					<button type="submit">提交答案</button>
+	
+				</form>
+			
+			<!-- Trace原題：沒有step，只顯示題目 -->	
+			{% elif question.type == "Trace" and question.step is defined %}
+				<form method="POST" action="/">
+		
+					<input 
+						type="hidden"
+						name="index"
+						value="{{ index }}"
+					>		
+		
+					<textarea
+						name="answer"
+						rows="8"
+						placeholder="請輸入你的答案..."
+					></textarea>
+		
+					<br><br>
+		
+					<button type="submit">提交答案</button>
+	
+				</form>
+		
+			<!-- 一般文字題 -->				
+			{% else %}		
+				<form method="POST" action="/">
+			
+					<input 
+						type="hidden"
+						name="index"
+						value="{{ index }}"
+					>		
+		
+					<textarea
+						name="answer"
+						rows="8"
+						placeholder="請輸入你的答案..."
+					></textarea>
+		
+					<br><br>
+		
+				<button type="submit">提交答案</button>
+	
+				</form>
+				{% endif %}
+			{% endif %}
+		</section>
+	
+		<!-- 提交後顯示答案 -->
+		{% if submitted %}	
+			<section class="feedback">
+				<hr>
+				<h3>你的答案：</h3>
+				<pre>{{ answer }}</pre>
+				<h3>
+					理解程度：
+					{{ "%.1f"|format(percentage) }}%
+				</h3>
+	
+				{% if missing_concepts %}	
+					<p>尚未掌握:</p>								
+						{% for concept in missing_concepts %}
+							<p>✗ {{ concept }}</p>
+						{% endfor %}				
+				{% else %}
+					<p>✓ 所有核心觀念都掌握了!</p>
+				{% endif %}		
+			
+			</section>
+		{% endif %}
+		<nav class="navigation">
+			<!-- 上ㄧ題 -->
+			{% if index > 0 %}
+				<a href="/question/{{ index - 1 }}"><button type="button">返回</button></a>
+			{% endif %}
+				
+			<!-- 下ㄧ題 -->
+			{% if index + 1 < total %}		
+				<a href="/question/{{ index + 1 }}">
+					<button type="button">繼續</button>
+				</a>
+			{% else %}
+				<a href="/question/0"><button type="button">結束診斷</button></a>	
+			{% endif %}	
+		</nav>
+
+	</main>
+</body>
+</html>
