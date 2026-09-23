@@ -1,0 +1,523 @@
+[
+{
+	"topic": "Binary Search",
+	"type": "Concept",
+	"subtopic": "What",
+	"difficulty": "Easy",
+	"question": "請自己試著說明什麼是Binary Search?",
+	"key_concepts": [
+		{
+			"concept":"搜尋演算法",
+			"keywords":[
+				["搜尋演算法"], ["搜尋方法"], ["search algorithm"]	
+			],
+			"negative_keywords":[
+				["排序演算法"], ["排序方法"], ["sorted algorithm"]
+			]
+		},
+		{
+			"concept":"已排序資料",
+			"keywords":[
+				["已排序"], ["已排序", "資料"], ["已排序", "元素"] , ["排好順序"]
+			],
+			"negative_keywords":[
+				["不需排序"],
+				["不用排序"],
+				["不必排序"],
+				["無需排序"]
+			]	
+		},
+		{
+			"concept":"中間元素",
+			"keywords":[
+			["中間元素"], ["中間值"], ["mid"], ["中間位置"], ["中間索引"]
+			],
+			"negative_keywords":[]
+		},
+		{
+			"concept":"縮小搜尋範圍",
+			"keywords":[
+				["縮小", "搜尋範圍"], ["排除", "一半"],["縮小","一半"], ["對半", "切開"] 
+			],
+			"negative_keywords":[]
+		}
+	]
+},	
+{
+	"topic": "Binary Search",
+	"type": "Concept",
+	"subtopic": "Why",
+	"difficulty": "Easy",
+	"question": "為什麼我們要使用Binary Search?",
+	"key_concepts": [
+		{
+			"concept":"每次搜尋範圍縮小約一半",
+			"keywords":[
+				["每次", "縮小一半"], ["每次", "排除一半"],["搜尋範圍減半"], ["一次排除約一半的資料"], ["一次排除約一半的元素"]
+				],
+			"negative_keywords":[]
+		},
+		{
+			"concept":"搜尋效率較高",
+			"keywords":[
+				["搜尋效率", "高"], ["搜尋速度", "快"],["搜尋效率", "佳"] , ["查找速度", "快"],["查找效率", "高"],["查找效率", "佳"], ["查詢速度", "快"],["查找效率", "高"],["查找效率", "佳"]
+				],
+			"negative_keywords":[]
+		},
+		{
+			"concept":"比Linear Search更有效率",
+			"keywords":[
+				["比線性搜尋快"], ["比linear search", "快"], ["比linear search", "有效率"],
+				["搜尋效率優於線性搜尋"], ["相較於", "逐一搜尋更有效率"], ["比起", "一個一個搜尋更有效率"]
+			],
+			"negative_keywords":[]	
+		}
+	]
+},
+{
+	"topic": "Binary Search",
+	"type": "Concept",
+	"subtopic": "When",
+	"difficulty": "Easy",
+	"question": "什麼時候適合使用Binary Search?",
+	"key_concepts": [
+		{
+			"concept":"資料已排序",
+			"keywords":[
+				["已排序"], ["已排序", "資料"], ["已排序", "元素"] , ["排好順序"]
+				],
+			"negative_keywords":[
+				["不需排序"],
+				["不用排序"],
+				["不必排序"],
+				["無需排序"]
+			]	
+		},
+		{
+			"concept":"資料量很大時較適合",
+			"keywords":[
+				["資料量", "大"], ["資料量", "龐大"],["元素量", "多"] 
+				],
+			"negative_keywords":[]
+		}
+	]	
+},
+{
+	"topic": "Binary Search",
+	"type": "Concept",
+	"subtopic": "How",
+	"difficulty": "Easy",
+	"question": "Binary Search是怎麼運作的?",
+	"key_concepts": [
+		{
+			"concept":"left和right控制搜尋範圍",
+			"keywords":[
+				["left", "左界"], ["right", "右界"], ["左右界"] , ["搜尋範圍", "左界"], ["搜尋範圍", "右界"], ["l", "下限"],["u", "上限"]
+				],
+			"negative_keywords":[]	
+		},
+		{
+			"concept":"mid找出中間位置",
+			"keywords":[
+				["中間", "元素"], ["中間值"], ["mid"], ["中間位置"], ["中間索引"] 
+				],
+			"negative_keywords":[]
+		},
+		{
+			"concept":"比較target和mid,決定保留哪一邊",
+			"keywords":[
+				["比較", "中間", "元素"], ["比較","中間值"], ["比較","mid"],["目標值", "中間", "元素"],["目標值", "中間值"], ["target","mid"], ["小於","左半"], ["大於", "右半"],["小於","左邊"], ["大於", "右邊"], ["排除", "另一半"]
+				],
+			"negative_keywords":[]
+		}
+	]	
+},
+{
+	"topic": "Binary Search",
+	"type": "Concept",
+	"subtopic": "Where / Scenario",
+	"difficulty": "Easy",
+	"question": "情境1 \n已知某電商平台有100萬筆商品，價格已由低到高排序。現在買家想找出價格介於500~1000元的所有商品。你認爲適合使用Binary Search嗎？為什麼？",
+	"key_concepts": [
+		{
+			"concept":"適合",
+			"keywords":[
+				["適合"], ["可以使用"],["適合使用"]
+				],
+			"negative_keywords":[
+				["不適合"]
+			]	
+		},
+		{
+			"concept":"資料已排序",
+			"keywords":[
+				["已排序"], ["已排序", "資料"]
+				],
+			"negative_keywords":[
+			]	
+		},
+		{
+			"concept":"資料量大",
+			"keywords":[
+				["資料量", "大"], ["資料量", "龐大"]
+				],
+			"negative_keywords":[]
+		},
+		{
+			"concept":"可以透過Binary Search快速縮小搜尋範圍",
+			"keywords":[
+				["縮小", "搜尋範圍"], ["縮小", "篩選區間"],["縮小","查詢範圍"],["縮小","查詢區間"]
+				],
+			"negative_keywords":[]
+		}
+	]
+},
+{
+	"topic": "Binary Search",
+	"type": "Concept",
+	"subtopic": "Where / Scenario",
+	"difficulty": "Easy",	
+	"question": "情境2 \n已知某網站有100萬筆商品資料，但價格並沒有排序。現在買家只想要搜尋一次某個商品。你認爲適合使用Binary Search嗎?為什麼?",
+	"key_concepts": [
+		{
+			"concept":"不適合",
+			"keywords":[
+				["不適合"],["不適合使用"],["不建議使用"]
+				],
+			"negative_keywords":[
+				["是"],["可以"]
+			]	
+		},
+		{
+			"concept":"價格未排序",
+			"keywords":[
+				["沒有排序"], ["未排序"],["無排序"], ["無","事先排序"],["無","預先排序"],["沒有","事先排序"],["沒有","預先排序"]
+				],
+			"negative_keywords":[
+				["資料"], ["已排序"]
+				]
+		},
+		{
+			"concept":"只有一次搜尋",
+			"keywords":[
+				["一次", "搜尋"], ["一次", "查詢"],["一次","查找"]
+				],
+			"negative_keywords":[]
+		},
+				{
+			"concept":"加上排序時間會更久",
+			"keywords":[
+				["排序時間", "久"], ["排序成本", "高"],["排序效益","低"]
+				],
+			"negative_keywords":[]
+		}
+	]	
+},
+{
+	"topic": "Binary Search",
+	"type": "Trace",
+	"trace_id": "array_range",
+	"difficulty": "Easy",	
+	"question": "給予一組數組如下：\n[150, 280, 330, 450, 590, 620, 740, 850, 990, 1000, 1130, 1210]\n目標：找出1130",
+	"key_concepts": [
+		{
+			"concept":"",
+			"keywords":[],
+			"negative_keywords":[]	
+		}
+	]	
+},
+{
+	"topic": "Binary Search",
+	"type":"Trace",
+	"trace_id": "array_range",
+	"step": 1,
+	"subtopic":	"Calculate",
+	"question": "請判斷第一次搜尋時，mid索引與元素分別為何?",
+	"key_concepts": [
+		{
+			"concept":"追蹤mid索引",
+			"keywords":[
+				["索引","5"]
+				],
+			"negative_keywords":[]	
+		},
+		{
+			"concept":"追蹤mid元素",
+			"keywords":[
+				["元素","620"]
+				],
+			"negative_keywords":[]	
+		}
+	]	
+},
+{
+	"topic": "Binary Search",
+	"type":"Trace",
+	"trace_id": "array_range",
+	"step": 2,
+	"subtopic":	"Decide",
+	"question": "請判斷target和mid比較後，下一步該搜尋哪一邊?",
+	"key_concepts": [
+		{
+			"concept":"判斷方向",
+			"keywords":[
+				["右邊"],["右"]
+				],
+			"negative_keywords":[
+				["左邊"],["左"]
+				]	
+		}
+	]	
+},
+{
+	"topic": "Binary Search",
+	"type": "Trace",
+	"trace_id": "array_range",
+	"step": 3,
+	"subtopic":	"Execute",
+	"question": "下一次的left, right, mid 元素分別為何?",
+	"key_concepts": [
+		{
+			"concept":"追蹤left",
+			"keywords":[
+				["left","740"]
+				],
+			"negative_keywords":[]	
+		},
+		{
+			"concept":"追蹤mid",
+			"keywords":[
+				["mid","990"]
+				],
+			"negative_keywords":[]	
+		},
+		{
+			"concept":"追蹤right",
+			"keywords":[
+				["right","1210"]
+				],
+			"negative_keywords":[]	
+		}
+	]	
+},
+{
+	"topic": "Binary Search",
+	"type": "Trace",
+	"trace_id": "array_range",
+	"step": 4,
+	"subtopic":	"Trace",
+	"question": "請判斷最後在哪個位置(索引)找到?",
+	"key_concepts": [
+		{
+			"concept":"完整Trace",
+			"keywords":[
+				["10"]
+				],
+			"negative_keywords":[
+				["1210"]
+				]	
+		}
+	]	
+},
+{
+	"topic": "Binary Search",
+	"type": "Code",
+	"subtopic": "FillInTheBlanks",
+	"difficulty": "Easy",
+	"question": "請完成以下Binary Search程式碼，將空白處填上正確的程式碼，使程式能正確搜尋target並回傳其索引。\n\ndef binary_search(arr, target):\n left = 0\n right = len(arr) - 1\n\n while left <= right:\n  ______\n\n  if arr[mid] == target:\n    return mid\n  elif arr[mid] < target:\n    ______\n  else:\n    ______\n\n return -1",
+	"key_concepts": [
+		{
+			"concept":"計算mid",
+			"keywords":[
+				["mid=(left+right)//2"]
+			],
+			"negative_keywords":[]	
+		},
+		{
+			"concept":"更新left",
+			"keywords":[
+				["left=mid+1"]
+			],
+			"negative_keywords":[]	
+		},
+		{
+			"concept":"更新right",
+			"keywords":[
+				["right=mid-1"]
+			],
+			"negative_keywords":[]	
+		}
+	]		
+},	
+{
+	"topic": "Binary Search",
+	"type": "Code",
+	"subtopic": "Debug",
+	"difficulty": "Easy",
+	"question": "請找出以下Binary Search程式碼片段錯誤之處，並標注行數與說明應如何修改。\n\n01 if arr[mid] == target:\n02  return mid\n03 elif arr[mid] < target:\n04  right = mid - 1\n05 else:\n06  left = mid + 1",
+	"key_concepts": [
+		{
+			"concept":"target < arr[mid] → 往左搜尋",
+			"keywords":[
+			["04","left","mid + 1"], ["04","left","mid+1"]
+			],
+			"negative_keywords":[]	
+		},
+		{
+			"concept":"target > arr[mid] → 往右搜尋",
+			"keywords":[
+			["06","right","mid - 1"], ["06","right","mid-1"]
+			],
+			"negative_keywords":[]	
+		}
+	]	
+},
+{
+	"topic": "Binary Search",
+	"type": "Code",
+	"subtopic": "Interactive",
+	"difficulty": "Easy",
+	"question": "請透過互動操作完成Binary Search，找出target。",
+	"array": [150, 280, 330, 450, 590, 620, 740, 850, 990, 1000, 1130, 1210],
+	"target": 1130,
+	"key_concepts": [
+		{
+			"concept":"",
+			"keywords":[],
+			"negative_keywords":[]	
+		}
+	]	
+},
+{
+	"topic": "Binary Search",
+	"type": "Code",
+	"subtopic": "Recursive",
+	"difficulty": "Easy",
+	"question": "請使用遞迴實作Binary Search，搜尋數組[150, 280, 330, 450, 590, 620, 740, 850, 990, 1000, 1130, 1210]中的1130，\n並回傳其索引。",
+	"array": [150, 280, 330, 450, 590, 620, 740, 850, 990, 1000, 1130, 1210],
+	"target": 1130,
+	"key_concepts": [
+		{
+			"concept":"Base Case",
+			"keywords":[
+				["if left > right"]
+			],
+			"negative_keywords":[]	
+		},
+		{
+			"concept":"計算mid",
+			"keywords":[
+				["mid=(left+right)//2"]
+			],
+			"negative_keywords":[]	
+		},
+		{
+			"concept":"找到target",
+			"keywords":[
+				["target==arr[mid]"]
+			],
+			"negative_keywords":[]	
+		},
+		{
+			"concept":"遞迴搜尋右半邊",
+			"keywords":[
+				["mid+1", "right"]
+			],
+			"negative_keywords":[]	
+		},
+		{
+			"concept":"遞迴搜尋左半邊",
+			"keywords":[
+				["left","mid-1"]
+			],
+			"negative_keywords":[]	
+		}
+	]	
+},
+{
+	"topic": "Binary Search",
+	"type": "Code",
+	"subtopic": "Search Insert Position",
+	"difficulty": "Easy",
+	"question": "請使用Binary Search實作Search Insert Position。給定已排序且無重複元素的數組[1, 3, 5, 6]，若target存在回傳其索引;若target不存在，則回傳target應插入的位置。",
+	"key_concepts": [
+	{
+			"concept":"Binary Search",
+			"keywords":[
+				["left"],["right"],["mid"]
+			],
+			"negative_keywords":[]
+	},
+	{
+			"concept":"找到target時回傳索引",
+			"keywords":[
+				["target==arr[mid]"]
+			],
+			"negative_keywords":[]
+	},
+	{
+			"concept":"target較大時搜尋右半部",
+			"keywords":[
+				["left", "mid+1"]
+			],
+			"negative_keywords":[]
+	},
+	{
+			"concept":"target較小時搜尋左半部",
+			"keywords":[
+				["right", "mid-1"]
+			],
+			"negative_keywords":[]
+	},
+	{
+			"concept":"找不到target時回傳插入墜位置",
+			"keywords":[
+				["return", "left"]
+			],
+			"negative_keywords":[]
+	}
+	]	
+},
+{
+	"topic": "Binary Search",
+	"type": "Complexity",
+	"subtopic": "Time Complexity",
+	"difficulty": "Easy",
+	"question": "Binary Search的時間複雜度為何？為什麼？",
+	"key_concepts": [
+		{
+			"concept":"時間複雜度為O(log n)",
+			"keywords":[
+			["O(log n)"],["O(logn)"],["log n"],["logn"]
+			],
+			"negative_keywords":[
+			["O(n)"], ["O(n^2)"], ["O(nlogn)"]	
+			]
+		},
+		{
+			"concept":"每次搜尋範圍約縮小一半",
+			"keywords":[
+			["縮小","一半"],["排除","一半"],["搜尋範圍減半"],["每次","一半"]
+			],
+			"negative_keywords":[]	
+		}
+	]	
+},
+{
+	"topic": "Binary Search",
+	"type": "Complexity",
+	"subtopic": "Calculate",
+	"difficulty": "Easy",
+	"question": "有5000筆已排序資料，使用Binary Search最壞情況下最多需要比較幾次?",
+	"key_concepts": [
+		{
+			"concept":"實際估算搜尋次數",
+			"keywords":[
+			["13"],["13次"]
+			],
+			"negative_keywords":[]
+		}
+	]	
+}
+]
